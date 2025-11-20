@@ -1,0 +1,13 @@
+import { Page } from "@playwright/test";
+
+export class MyAccountPage {
+    page: Page;
+
+    constructor(page: Page) {
+        this.page = page;
+    }
+
+    visit = async () => {
+        await this.page.goto("/my-account");
+    }
+}
