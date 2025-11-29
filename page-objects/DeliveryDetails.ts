@@ -65,7 +65,7 @@ export class DeliveryDetails {
     const adressCountBeforeSaving = await this.savedAdressContainer.count();
     await this.saveAdressButton.waitFor();
     await this.saveAdressButton.click();
-    await expect(this.savedAdressContainer).toHaveCount(adressCountBeforeSaving + 1);
+    await expect(this.savedAdressContainer).toHaveCount(adressCountBeforeSaving + 1, {timeout: 3000});
 
     await this.savedAdressFirstName.first().waitFor();
     expect(await this.savedAdressFirstName.first().innerText()).toBe(await this.firstNameInput.inputValue());
